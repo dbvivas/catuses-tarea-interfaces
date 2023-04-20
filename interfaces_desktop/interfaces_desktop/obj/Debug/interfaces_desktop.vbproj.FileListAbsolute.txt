@@ -1,5 +1,4 @@
 C:\xampp\htdocs\trabajo_tarea_interfaces\interfaces_desktop\interfaces_desktop\bin\Debug\interfaces_desktop.exe.config
-C:\xampp\htdocs\trabajo_tarea_interfaces\interfaces_desktop\interfaces_desktop\obj\Debug\interfaces_desktop.vbprojResolveAssemblyReference.cache
 C:\xampp\htdocs\trabajo_tarea_interfaces\interfaces_desktop\interfaces_desktop\obj\Debug\interfaces_desktop.Form1.resources
 C:\xampp\htdocs\trabajo_tarea_interfaces\interfaces_desktop\interfaces_desktop\obj\Debug\interfaces_desktop.Resources.resources
 C:\xampp\htdocs\trabajo_tarea_interfaces\interfaces_desktop\interfaces_desktop\obj\Debug\interfaces_desktop.vbproj.GenerateResource.Cache
@@ -10,3 +9,7 @@ C:\xampp\htdocs\trabajo_tarea_interfaces\interfaces_desktop\interfaces_desktop\b
 C:\xampp\htdocs\trabajo_tarea_interfaces\interfaces_desktop\interfaces_desktop\obj\Debug\interfaces_desktop.exe
 C:\xampp\htdocs\trabajo_tarea_interfaces\interfaces_desktop\interfaces_desktop\obj\Debug\interfaces_desktop.xml
 C:\xampp\htdocs\trabajo_tarea_interfaces\interfaces_desktop\interfaces_desktop\obj\Debug\interfaces_desktop.pdb
+C:\xampp\htdocs\trabajo_tarea_interfaces\interfaces_desktop\interfaces_desktop\obj\Debug\interfaces_desktop.vbproj.AssemblyReference.cache
+C:\xampp\htdocs\trabajo_tarea_interfaces\interfaces_desktop\interfaces_desktop\obj\Debug\interfaces_desktop.vbproj.SuggestedBindingRedirects.cache
+C:\xampp\htdocs\trabajo_tarea_interfaces\interfaces_desktop\interfaces_desktop\obj\Debug\interfaces_desktop.vbproj.CoreCompileInputs.cache
+C:\xampp\htdocs\trabajo_tarea_interfaces\interfaces_desktop\interfaces_desktop\obj\Debug\interfaces_desktop.vbproj.CopyComplete

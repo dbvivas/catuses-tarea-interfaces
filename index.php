@@ -14,6 +14,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
+
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
@@ -24,7 +25,7 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Ingresa tus credenciales</p>
 
-      <form action="index3.html" method="post">
+      <form action="validar_credenciales.php" method="post">
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Correo">
           <div class="input-group-append">

@@ -1,10 +1,29 @@
-<?php 
-echo 'esto es una prueba, este archivo validara las credenciales (correo y contreaña)<br><br>';
-echo 'para realizar testing directos podemos ingresar a la interfaz de inicio<br><br>';
-echo 'preparada si el usuario se ha verificado correctamente<br><br>';
+<?php
+  session_start();
+  include '00_includes/conn.php';
 
+  if(isset($_POST['login'])){
+    
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $sql = "SELECT * FROM admin WHERE username = '$username'";
+    $query = $conn->query($sql);
+
+    if($query->num_rows < 1){
+      $_SESSION['error'] = 'Cannot find account with the username';
+    }
+    else{
+      $row = $query->fetch_assoc();
+      if(password_verify($password, $row['password'])){
+        $_SESSION['admin'] = $row['id'];
+      }
+      else{
+        $_SESSION['error'] = 'Incorrect password !!!';
+      }
+    }
+  }
+  else{
+    $_SESSION['error'] = 'Input admin credentials first';
+  }
+  header('location: index.php');
 ?>
-
-<a href="inicio.php">
-  ingresa de forma directa al hacer click aqui
-</a>

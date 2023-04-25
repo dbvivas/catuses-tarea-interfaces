@@ -1,3 +1,17 @@
+<?php include '00_includes/conn.php'; ?>
+<?php
+session_start();
+  if(isset($_SESSION['admin'])){   
+  //echo "<h1> texto ejemplo [".$_SESSION['admin']."] </h1>";
+  header('location: inicio.php');
+}
+  // else{
+  //    header('location:/bodega/proyecto/pacientes/01index.php');
+  // }
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +30,7 @@
 </head>
 
 <body class="hold-transition login-page">
+  <?php include '00_includes/alertas.php'; ?>
 <div class="login-box">
   <div class="login-logo">
     <a href="index.php"><b>Tcthe</b>CASE</a>
@@ -27,7 +42,7 @@
 
       <form action="validar_credenciales.php" method="post">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Correo">
+          <input type="text" name="username" class="form-control" placeholder="Correo">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -35,7 +50,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Contraseña">
+          <input type="password" name="password" class="form-control" placeholder="Contraseña">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -53,7 +68,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+            <button type="submit" name="login" class="btn btn-primary btn-block">Entrar</button>
           </div>
           <!-- /.col -->
         </div>

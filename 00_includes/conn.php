@@ -14,7 +14,7 @@ if ($conn->connect_errno) {
 	exit();
 }else
 {
-	echo "<h1>conexion al servidor:. conect</h1>";
+	//echo "<h6>conexion al servidor:. conect</h6>";
 }
 
 

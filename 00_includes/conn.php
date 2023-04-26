@@ -1,12 +1,16 @@
 <?php
 
 $servername = "localhost";
-//$username = "root";
+
 $username = "catuses_demo";
-//$password = "";
+$username = "root";
+
 $password = "5BTba(fj5Snn";
-//$dbname = "tcthecase_bd";
+$password = "";
+
 $dbname = "catuses_demo";
+$dbname = "tcthecase_bd";
+
 
 error_reporting(E_ALL);
 	//No me muestra errores

@@ -1,10 +1,17 @@
 <?php
 
-//echo 'archivo de conexion';
 $servername = "localhost";
+
+$username = "catuses_demo";
 $username = "root";
+
+$password = "5BTba(fj5Snn";
 $password = "";
+
+$dbname = "catuses_demo";
 $dbname = "tcthecase_bd";
+
+
 error_reporting(E_ALL);
 	//No me muestra errores
 $conn = new mysqli($servername, $username, $password, $dbname);

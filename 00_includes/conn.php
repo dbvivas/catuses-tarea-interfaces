@@ -9,7 +9,7 @@ $password = "5BTba(fj5Snn";
 $password = "";
 
 $dbname = "catuses_demo";
-$dbname = "tcthecase_bd";
+$dbname = "catuses_demo";
 
 
 error_reporting(E_ALL);

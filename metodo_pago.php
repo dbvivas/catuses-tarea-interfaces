@@ -37,28 +37,28 @@
             <div class="custom-control custom-radio">
               <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
               <label for="customRadio1" class="custom-control-label">CREDITO..............</label>
-              <img src="../../dist/img/credit/visa.png" alt="Visa">
+              <img src="dist/img/credit/visa.png" alt="Visa">
             </div>
             <br>  
           
             <div class="custom-control custom-radio">
               <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio" checked>
               <label for="customRadio2" class="custom-control-label">DEBITO................</label>
-              <img src="../../dist/img/credit/mastercard.png" alt="Mastercard">
+              <img src="dist/img/credit/mastercard.png" alt="Mastercard">
             </div>
             <br>  
            
             <div class="custom-control custom-radio">
               <input class="custom-control-input" type="radio" id="customRadio3" name="customRadio" checked>
               <label for="customRadio3" class="custom-control-label">OXXO...................</label>
-              <img src="../../dist/img/credit/american-express.png" alt="American Express">
+              <img src="dist/img/credit/american-express.png" alt="American Express">
             </div>
             <br>  
             
             <div class="custom-control custom-radio">
               <input class="custom-control-input" type="radio" id="customRadio4" name="customRadio" checked>
               <label for="customRadio4" class="custom-control-label">PAYPAL................</label>
-              <img src="../../dist/img/credit/paypal2.png" alt="Paypal">
+              <img src="dist/img/credit/paypal2.png" alt="Paypal">
             </div>
 
 

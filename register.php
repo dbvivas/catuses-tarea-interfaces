@@ -32,7 +32,7 @@
 
         <form action="register_save.php" method="post" enctype="multipart/form-data">
           <div class="input-group mb-3">
-            <input type="text"  required  name="username"  class="form-control" placeholder="Usuario">
+            <input type="text"  name="username"  class="form-control" placeholder="Usuario">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>
@@ -40,7 +40,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="email"  required  name="email"  class="form-control" placeholder="Correo">
+            <input type="email"  name="email"  class="form-control" placeholder="Correo">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -48,7 +48,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password"  required  name="clave"  class="form-control" placeholder="Contraseña">
+            <input type="password"  name="clave"  class="form-control" placeholder="Contraseña">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -56,7 +56,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password"  required  name="claveC"  class="form-control" placeholder="Repetir contraseña">
+            <input type="password"  name="claveC"  class="form-control" placeholder="Repetir contraseña">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -66,7 +66,7 @@
           <div class="row">
             <div class="col-8">
               <div class="icheck-primary">
-                <input type="checkbox" id="terminos" name="terminos" value="0">
+                <input type="checkbox" id="agreeTerms" name="terminos" value="agree">
                 <label for="agreeTerms">
                  Acepto los <a href="#">terminos</a>
                </label>

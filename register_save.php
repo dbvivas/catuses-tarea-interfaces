@@ -9,7 +9,17 @@ if(isset($_POST['add'])){
   $usuario = $_POST['username'];
   $contrasenia = $_POST['clave'];
   $email = $_POST['email'];
-  $terminos = $_POST['terminos'] == 1 ? true : false;
+ 
+if(isset($_POST['terminos']) && 
+   $_POST['terminos'] == 'agree') 
+{
+    $terminos = 1;
+}
+else
+{
+    $terminos = 0;
+} 
+
   $pass_cifrado = password_hash($contrasenia, PASSWORD_DEFAULT);  
   $rol_id = $_POST['rol_id'];
   $empresa_id = $_POST['empresa_id'];

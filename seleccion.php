@@ -140,6 +140,8 @@ $row = $query->fetch_assoc();
               </label>
             </div> -->
 
+            <form action="enviar.php" method="get">
+
             <div class="bg-primary py-2 px-3 mt-4">
               <h2 class="mb-0" id="subtotal">
                 <?php echo $row['precio']; ?>
@@ -188,16 +190,19 @@ $row = $query->fetch_assoc();
         </div>
 
         <div class="mt-4">
-          <div class="btn btn-success btn-lg ">
+
+          <button type="submit" name="enviar" id="enviar" class="btn btn-success btn-lg ">
             <i class="fas fa-cart-plus fa-lg mr-2"></i>
             Add to Cart
-          </div>
+          </button>
 
               <!-- <div class="btn btn-default btn-lg btn-flat">
                 <i class="fas fa-heart fa-lg mr-2"></i>
                 Add to Wishlist
               </div> -->
             </div>
+
+            </form>
 
            <!--  <div class="mt-4 product-share">
               <a href="#" class="text-gray">

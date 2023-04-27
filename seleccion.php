@@ -154,15 +154,15 @@ $row = $query->fetch_assoc();
 
             <div class="input-group mt-4 col-12 col-sm-6">
 
-              <button  class="btn btn-danger" onclick="minus()">
+              <div  class="btn btn-danger" onclick="minus()">
                 <i class=" fa fa-minus ">  </i>
-              </button>
+              </div>
 
               <input type="number" min="1"  id="cant" class="form-control" value="1" placeholder="cantidad">
 
-              <button  class="btn btn-primary" onclick="plus()">
+              <div  class="btn btn-primary" onclick="plus()">
                 <i class=" fa fa-plus ">  </i>
-              </button>
+              </div>
 
               <script type="text/javascript">
 

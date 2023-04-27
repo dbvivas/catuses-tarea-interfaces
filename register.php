@@ -19,7 +19,7 @@
 
 
     <?php include '00_includes/alertas.php'; ?>
-    
+
     <div class="register-logo">
       <a href="register.php"><b>Tcthe</b>CASE</a>    
     </div>
@@ -30,9 +30,9 @@
       <div class="card-body register-card-body">
         <p class="login-box-msg">Registar a un Nuevo Miembro</p>
 
-        <form action="register_save.php" method="post">
+        <form action="register_save.php" method="post" enctype="multipart/form-data">
           <div class="input-group mb-3">
-            <input type="text"  name="username"  class="form-control" placeholder="Usuario">
+            <input type="text"  required  name="username"  class="form-control" placeholder="Usuario">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>
@@ -40,7 +40,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="email"  name="email"  class="form-control" placeholder="Correo">
+            <input type="email"  required  name="email"  class="form-control" placeholder="Correo">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -48,7 +48,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password"  name="clave"  class="form-control" placeholder="Contraseña">
+            <input type="password"  required  name="clave"  class="form-control" placeholder="Contraseña">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -56,7 +56,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password"  name="claveC"  class="form-control" placeholder="Repetir contraseña">
+            <input type="password"  required  name="claveC"  class="form-control" placeholder="Repetir contraseña">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -66,7 +66,7 @@
           <div class="row">
             <div class="col-8">
               <div class="icheck-primary">
-                <input type="checkbox" id="agreeTerms" name="terminos" value="agree">
+                <input type="checkbox" id="terminos" name="terminos" value="0">
                 <label for="agreeTerms">
                  Acepto los <a href="#">terminos</a>
                </label>
@@ -81,7 +81,7 @@
       </form>
 
       <div class="social-auth-links text-center">
-        
+
       </div>
 
       <a href="index.php" class="text-center">Ya estoy registrado! - logeate!</a>

@@ -1,3 +1,4 @@
+<?php $nombreModulo = "Seleccion"; ?>
 <?php include 'index_header.php'; ?>
 <?php include 'index_body.php'; ?>
 <?php include 'index_menu_superior.php'; ?>
@@ -20,8 +21,8 @@ $row = $query->fetch_assoc();
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="">Inicio</a></li>
-            <li class="breadcrumb-item active"><?php echo $row['descripcion']; ?></li>
+            <li class="breadcrumb-item"><a href="inicio.php">Inicio</a></li>
+            <li class="breadcrumb-item active"><?php echo $nombreModulo; ?></li>
           </ol>
         </div>
       </div>
@@ -38,15 +39,39 @@ $row = $query->fetch_assoc();
           <div class="col-12 col-sm-6">
             <h3 class="d-inline-block d-sm-none"><?php echo $row['descripcion']; ?></h3>
             <div class="col-12">
-              <img src="<?php echo $row['url_photo']; ?>" class="product-image" alt="Product Image">
+              <img src="<?php echo (!empty($row['url_photo'])) ? $row['url_photo'] : 'dist/img/dispositivo1.jpg'; ?>" class="product-image" style="width: 300px; height: 300px;" alt="Product Image">
             </div>
             <div class="col-12 product-image-thumbs">
-              <div class="product-image-thumb active"><img src="<?php echo $row['url_photo']; ?>" alt="Product Image"></div>
-              <div class="product-image-thumb" ><img src="<?php echo $row['url_photo2']; ?>" alt="Product Image"></div>
-              <div class="product-image-thumb" ><img src="<?php echo $row['url_photo3']; ?>" alt="Product Image"></div>
-              <div class="product-image-thumb" ><img src="<?php echo $row['url_photo4']; ?>" alt="Product Image"></div>
-              <div class="product-image-thumb" ><img src="<?php echo $row['url_photo5']; ?>" alt="Product Image"></div>
+              
+
+              <div class="product-image-thumb active" >
+                <img src="<?php echo (!empty($row['url_photo'])) ? $row['url_photo'] : 'dist/img/dispositivo1.jpg'; ?>" alt="Product Image">
+              </div>
+
+              <div class="product-image-thumb" >
+                <img src="<?php echo (!empty($row['url_photo2'])) ? $row['url_photo2'] : 'dist/img/dispositivo2.jpg'; ?>" alt="Product Image">
+              </div>
+
+              <div class="product-image-thumb" >
+                <img src="<?php echo (!empty($row['url_photo3'])) ? $row['url_photo3'] : 'dist/img/dispositivo3.jpg'; ?>" alt="Product Image">
+              </div>
+
+              <div class="product-image-thumb" >
+                <img src="<?php echo (!empty($row['url_photo4'])) ? $row['url_photo4'] : 'dist/img/dispositivo4.jpg'; ?>" alt="Product Image">
+              </div>
+
+              <div class="product-image-thumb" >
+                <img src="<?php echo (!empty($row['url_photo5'])) ? $row['url_photo5'] : 'dist/img/dispositivo5.jpg'; ?>" alt="Product Image">
+              </div>
+
             </div>
+
+
+
+
+
+
+
           </div>
           <div class="col-12 col-sm-6">
             <h3 class="my-3"><?php echo $row['descripcion']; ?></h3>
@@ -116,7 +141,7 @@ $row = $query->fetch_assoc();
             </div> -->
 
             <div class="bg-primary py-2 px-3 mt-4">
-              <h2 class="mb-0">
+              <h2 class="mb-0" id="subtotal">
                 <?php echo $row['precio']; ?>
               </h2>
 
@@ -126,22 +151,47 @@ $row = $query->fetch_assoc();
             </div>
 
             <div class="input-group mt-4 col-12 col-sm-6">
-                  <button  class="btn btn-danger">
-                    <i class=" fa fa-minus ">  </i>
-                  </button>
 
-                  <input type="number" class="form-control" value="1" placeholder="cantidad">
+              <button  class="btn btn-danger" onclick="minus()">
+                <i class=" fa fa-minus ">  </i>
+              </button>
 
-                  <button  class="btn btn-primary">
-                    <i class=" fa fa-plus ">  </i>
-                  </button>
-                </div>
+              <input type="number" min="1"  id="cant" class="form-control" value="1" placeholder="cantidad">
 
-            <div class="mt-4">
-              <div class="btn btn-success btn-lg ">
-                <i class="fas fa-cart-plus fa-lg mr-2"></i>
-                Add to Cart
-              </div>
+              <button  class="btn btn-primary" onclick="plus()">
+                <i class=" fa fa-plus ">  </i>
+              </button>
+
+              <script type="text/javascript">
+
+               function minus() {
+                  if (document.getElementById('cant').value <= 1 ) {
+                   document.getElementById('cant').value = 1;
+                   var precioU = <?php echo $row['precio']; ?>;
+                   document.getElementById('subtotal').value = document.getElementById('cant').value * parseFloat(precioU);
+                  }else{
+                    document.getElementById('cant').value = (document.getElementById('cant').value - 1);
+                    var precioU = <?php echo $row['precio']; ?>;
+                    document.getElementById('subtotal').innerHTML  = document.getElementById('cant').value * parseFloat(precioU);
+                  }
+                }
+
+            function plus() {
+              document.getElementById('cant').value = ( parseInt(document.getElementById('cant').value) + 1);
+              var precioU = <?php echo $row['precio']; ?>;
+              document.getElementById('subtotal').innerHTML  = document.getElementById('cant').value * parseFloat(precioU);
+            }
+
+
+          </script>
+
+        </div>
+
+        <div class="mt-4">
+          <div class="btn btn-success btn-lg ">
+            <i class="fas fa-cart-plus fa-lg mr-2"></i>
+            Add to Cart
+          </div>
 
               <!-- <div class="btn btn-default btn-lg btn-flat">
                 <i class="fas fa-heart fa-lg mr-2"></i>
@@ -190,12 +240,7 @@ $row = $query->fetch_assoc();
 </div>
 <!-- /.content-wrapper -->
 
-<footer class="main-footer">
-  <div class="float-right d-none d-sm-block">
-    <b>Version</b> 3.1.0
-  </div>
-  <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-</footer>
+<?php include 'footer.php'; ?>
 
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">

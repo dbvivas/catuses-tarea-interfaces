@@ -21,7 +21,7 @@ else
 } 
 
   $pass_cifrado = password_hash($contrasenia, PASSWORD_DEFAULT);  
-  $rol_id = $_POST['rol_id'];
+  $rol_id = 1;
   $empresa_id = $_POST['empresa_id'];
   $sucursal_id = $_POST['sucursal_id'];
 

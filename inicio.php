@@ -1,3 +1,5 @@
+<?php $nombreModulo = "Inicio"; ?>
+
 <?php include 'index_header.php'; ?>
 <?php include 'index_body.php'; ?>
 <?php include 'index_menu_superior.php'; ?>
@@ -25,10 +27,10 @@
 
                   <div>
                     <div class="btn-group w-100 mb-2">
-                      <a class="btn btn-info active" href="javascript:void(0)" data-filter="all">Todos las Marcas</a>
-                      <a class="btn btn-info" href="javascript:void(0)" data-filter="1"> Category 1 (SAMSUNG) </a>
-                      <a class="btn btn-info" href="javascript:void(0)" data-filter="2"> Category 2 (IPHONE) </a>
-                      <a class="btn btn-info" href="javascript:void(0)" data-filter="3"> Category 3 (REDMI) </a>
+                      <a class="btn btn-info active" href="javascript:void(0)" data-filter="all">TODOS</a>
+                      <a class="btn btn-info" href="javascript:void(0)" data-filter="1"> SAMSUNG </a>
+                      <a class="btn btn-info" href="javascript:void(0)" data-filter="2"> IPHONE </a>
+                      <a class="btn btn-info" href="javascript:void(0)" data-filter="3"> REDMI </a>
 
                     </div>
 
@@ -94,14 +96,7 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Tcthecase
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2023-2031 <a href="https://Tcthecase.com">Tcthecase</a>.</strong> All rights reserved.
-  </footer>
+ <?php include 'footer.php'; ?>
 </div>
 <!-- ./wrapper -->
 

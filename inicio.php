@@ -55,8 +55,8 @@
                           data-max-width="400"
                           data-max-height="400"
                           data-footer="<a href='seleccion.php?id=<?php echo $row['id']; ?>' class='btn btn-primary btn-sm '>
-                            <i class='fas fa-cart-plus fa-lg mr-2'></i>
-                            Comprar</button>"
+                            <i class='fa fa-info fa-lg mr-2'></i>
+                            SELECCIONAR</button>"
 
 
 

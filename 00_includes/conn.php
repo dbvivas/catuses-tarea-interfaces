@@ -1,15 +1,19 @@
 <?php
 
-$servername = "localhost";
+$modo = true;
 
-$username = "catuses_demo";
-$username = "root";
+$servername = "localhost";	
 
-$password = "5BTba(fj5Snn";
-$password = "";
+if (modo) {
+	$username = "catuses_demo";
+	$password = "5BTba(fj5Snn";	
+}else{	
+	$username = "root";	
+	$password = "";	
+}
 
 $dbname = "catuses_demo";
-$dbname = "catuses_demo";
+
 
 
 error_reporting(E_ALL);

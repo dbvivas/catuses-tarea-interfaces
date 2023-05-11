@@ -1,5 +1,4 @@
 <?php $nombreModulo = "Enviar"; ?>
-
 <?php include 'index_header.php'; ?>
 <?php include 'index_body.php'; ?>
 <?php include 'index_menu_superior.php'; ?>

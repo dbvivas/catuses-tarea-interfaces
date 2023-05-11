@@ -24,7 +24,17 @@
       
       <div class="dropdown-divider"></div>
       <a href="#" class="dropdown-item">
-        <i class="fa fa-shopping-cart mr-2"></i>2 IR AL CARRITO
+
+
+<?php 
+
+$idO = orden_actual($user['id']); 
+$tItemsCar = tOrdenCar($idO);
+
+
+?>
+
+        <i class="fa fa-shopping-cart mr-2"></i><?php echo $tItemsCar; ?> IR AL CARRITO
         <!-- <span class="float-right text-muted text-sm">3 mins</span> -->
       </a>
       <div class="dropdown-divider"></div>

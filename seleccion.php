@@ -80,7 +80,7 @@ $row = $query->fetch_assoc();
             <hr>
 
 
-            <form action="enviar_add_order_detail.php" method="post">
+            <form action="enviar_add_order_detail.php" method="POST" enctype="multipart/form-data">
 
               <div class="bg-primary py-2 px-3 mt-4">
                 <h2 class="mb-0" id="subtotal">
@@ -94,12 +94,12 @@ $row = $query->fetch_assoc();
 
 
             <?php 
-              $idO = orden_actual($user['id']);
+             // $idO = orden_actual($user['id']);
             ?>
 
-            <input type="text" name="userId" id="userId" value="<?php echo $user['id']; ?>">
+            <input type="text" name="userId" id="userId" value="<?php echo $user['id']; ?>">            
+            <input type="text" name="productoId" id="productoId" value="<?php echo $idP; ?>">
             <input type="text" name="ordenId" id="ordenId" value="<?php echo $idO; ?>">
-            <input type="text" name="codigoId" id="codigoId" value="<?php echo $idP; ?>">
 
             <div class="input-group mt-4 col-12 col-sm-6">
 
@@ -107,7 +107,7 @@ $row = $query->fetch_assoc();
                 <i class=" fa fa-minus ">  </i>
               </div>
 
-              <input type="number" min="1"  id="cant" class="form-control" value="1" placeholder="cantidad">
+              <input type="number" name="cant" min="1"  id="cant" class="form-control" value="1"  placeholder="cantidad">
 
               <div  class="btn btn-primary" onclick="plus()">
                 <i class=" fa fa-plus ">  </i>

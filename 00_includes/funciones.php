@@ -13,23 +13,24 @@ function getModelos(){
 function orden_actual($userId){
    $consecutivo = 0;
    include 'conn.php';
-   $sql = "SELECT COUNT(*) as totalO FROM ordenes";
-   //$sql = "SELECT count(*) as totalR FROM ordenes WHERE user_id = "$userId;
+   $sql = "SELECT COUNT(*) as totalO FROM ordenes";   
    $query = $conn->query($sql);
    $datosx = $query->fetch_assoc();  
-
    $totalO = $datosx['totalO'];
 
    if ($totalO>0) {
 
 
 
-      $sql = "SELECT COUNT(*) as totalOU FROM ordenes WHERE user_id = "$userId;
+      $sql = "SELECT COUNT(*) as totalOU FROM ordenes WHERE user_id = ".$userId;
       $query = $conn->query($sql);
       $datosx = $query->fetch_assoc(); 
       $totalOU = $datosx['totalOU'];
+
+
+
       if ($totalOU>0) {
-         $sql = "SELECT estado as estadoOU, id as idOU FROM ordenes WHERE user_id = "$userId." LIMIT 1 ORDER BY desc";
+         $sql = "SELECT status as estadoOU, id as idOU FROM ordenes WHERE user_id = ".$userId." ORDER BY status LIMIT 1";
          $query = $conn->query($sql);
          $datosx = $query->fetch_assoc(); 
          $estadoOU = $datosx['estadoOU'];
@@ -57,18 +58,9 @@ function orden_actual($userId){
 
        $consecutivo = $idOU+1;
 
-       
-
-    }
 
 
-
-    $sql = "SELECT max(id) as maximoId FROM ordenes WHERE user_id = "$userId." and status = 1";
-    $query = $conn->query($sql);
-    $datosx = $query->fetch_assoc();  
-
-    $maximoId = $datosx['maximoId'];
-    $consecutivo = $maximoId;
+      }
 
  }else{
    $consecutivo = 1;

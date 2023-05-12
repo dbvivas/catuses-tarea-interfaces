@@ -97,9 +97,9 @@ $row = $query->fetch_assoc();
              // $idO = orden_actual($user['id']);
             ?>
 
-            <input type="text" name="userId" id="userId" value="<?php echo $user['id']; ?>">            
-            <input type="text" name="productoId" id="productoId" value="<?php echo $idP; ?>">
-            <input type="text" name="ordenId" id="ordenId" value="<?php echo $idO; ?>">
+            <input type="hidden" name="userId" id="userId" value="<?php echo $user['id']; ?>">
+            <input type="hidden" name="productoId" id="productoId" value="<?php echo $idP; ?>">
+            <input type="hidden" name="ordenId" id="ordenId" value="<?php echo $idO; ?>">
 
             <div class="input-group mt-4 col-12 col-sm-6">
 

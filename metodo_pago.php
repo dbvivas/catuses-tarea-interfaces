@@ -30,7 +30,7 @@
       <div class="card-body register-card-body">
         <p class="login-box-msg">Seleccione el metodo de su preferencia</p>
 
-        <form action="#" method="post" enctype="multipart/form-data">
+        <form action="metodo_pago_select.php" method="post" enctype="multipart/form-data">
 
           <div class="form-group">
 

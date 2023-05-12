@@ -20,7 +20,8 @@
           <div class="row">
             <div class="col-12">
               <div class="card card-primary">
-                <div class="card-header">
+                <div class="card-header">                  
+                  <!-- <h4 class="card-title">Interfaz de Productos   Orden Id Act: <?php //echo $idO; ?> </h4> -->
                   <h4 class="card-title">Interfaz de Productos</h4>
                 </div>
                 <div class="card-body">

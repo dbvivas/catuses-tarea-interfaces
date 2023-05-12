@@ -11,6 +11,14 @@
 
   </ul>
 
+  <?php 
+
+$idO = orden_actual($user['id']); 
+$tItemsCar = tOrdenCar($idO);
+
+
+?>
+
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
 
@@ -18,7 +26,7 @@
    <li class="nav-item dropdown">
     <a class="nav-link" data-toggle="dropdown" href="#">
       <i class="fa fa-shopping-cart"></i>
-      <span class="badge badge-warning navbar-badge">0</span>
+      <span class="badge badge-warning navbar-badge"><?php echo $tItemsCar; ?></span>
     </a>
     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
       
@@ -26,13 +34,7 @@
       <a href="#" class="dropdown-item">
 
 
-<?php 
 
-$idO = orden_actual($user['id']); 
-$tItemsCar = tOrdenCar($idO);
-
-
-?>
 
         <i class="fa fa-shopping-cart mr-2"></i><?php echo $tItemsCar; ?> IR AL CARRITO
         <!-- <span class="float-right text-muted text-sm">3 mins</span> -->

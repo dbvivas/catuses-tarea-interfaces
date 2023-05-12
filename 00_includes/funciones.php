@@ -9,6 +9,15 @@ function getModelos(){
    return $datosx;
 }
 
+function tOrdenCar($ordenId){
+   include 'conn.php';
+   $sql = "SELECT COUNT(*) as total FROM ordenes_detalles WHERE orden_id = ".$ordenId;
+   $query = $conn->query($sql);
+   $datosx = $query->fetch_assoc();   
+   //$conn->close();
+   return $datosx['total'];
+}
+
 
 function orden_actual($userId){
    $consecutivo = 0;
@@ -20,17 +29,13 @@ function orden_actual($userId){
 
    if ($totalO>0) {
 
-
-
       $sql = "SELECT COUNT(*) as totalOU FROM ordenes WHERE user_id = ".$userId;
       $query = $conn->query($sql);
       $datosx = $query->fetch_assoc(); 
       $totalOU = $datosx['totalOU'];
 
-
-
       if ($totalOU>0) {
-         $sql = "SELECT status as estadoOU, id as idOU FROM ordenes WHERE user_id = ".$userId." ORDER BY status LIMIT 1";
+         $sql = "SELECT status as estadoOU, id as idOU FROM ordenes WHERE user_id = ".$userId." ORDER BY id DESC LIMIT 1";
          $query = $conn->query($sql);
          $datosx = $query->fetch_assoc(); 
          $estadoOU = $datosx['estadoOU'];

@@ -63,7 +63,7 @@
               <textarea id="inputMessage" class="form-control" rows="4"></textarea>
             </div>
             <div class="form-group">
-              <input type="submit" class="btn btn-primary" value="Enviar">
+              <input type="submit"  class="btn btn-primary" value="Enviar">
             </div>
           </form>
 

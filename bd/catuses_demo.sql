@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.11
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 27-04-2023 a las 08:41:41
+-- Tiempo de generación: 16-05-2023 a las 15:24:01
 -- Versión del servidor: 10.3.36-MariaDB-cll-lve
--- Versión de PHP: 7.4.33
+-- Versión de PHP: 8.1.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -49,7 +48,11 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `firstname`, `lastname`, `photo`, `created_on`, `rol_id`, `empresa_id`, `sucursal_id`, `sueldo`, `correo`, `terminos`) VALUES
-(1, 'admin', '$2y$10$HlgNThYXSiBOJMfqsBiyHenwa9Zqe0Jd/Jck6tUYENRs5EOvnwMLO', 'Administrador', 'Admin', 'usuario_avatar4.jpeg', '2019-12-18', 1, 1, 1, '25000', 'dvivas@catuses.com', 1);
+(1, 'admin', '$2y$10$HlgNThYXSiBOJMfqsBiyHenwa9Zqe0Jd/Jck6tUYENRs5EOvnwMLO', 'Administrador', 'Admin', 'usuario_avatar4.jpeg', '2019-12-18', 1, 1, 1, 25000, 'dvivas@catuses.com', 1),
+(2, 'lapto2006', '$2y$10$IwryP05y38BUuhYjD13xlO6Fl5C5fcWit3oX.zaF9Agdx2tFtT7Du', '', '', '', '2023-04-27', 1, 0, 0, NULL, 'lapto2006@gmail.com', 0),
+(3, 'dvivas', '$2y$10$WcVkfRhsMbQkwWb4UmlBU./Xk7jgzJV98zjr6snIlWg8eBh5mNic2', '', '', '', '2023-04-27', 1, 0, 0, NULL, 'dvivas@catuses.com', 1),
+(4, 'Javier', '$2y$10$SXy6rUfDT89DxQMu3V4cCO1TF5bPHk2gTmY0isZX9kh8eLU6Jwozm', '', '', '', '2023-04-27', 1, 0, 0, NULL, 'olake@gmail.com', 1),
+(5, 'Alejandro13', '$2y$10$RXmkbWajVn75pD3Rm5UZVeVM1WrFIbslkoHXuacwUotLv80YuovmO', '', '', '', '2023-04-27', 1, 0, 0, NULL, 'j.alejandro.gzz.mdz@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -111,14 +114,14 @@ CREATE TABLE `modelos` (
 --
 
 INSERT INTO `modelos` (`id`, `marca_id`, `descripcion`, `url_photo`, `precio`, `url_photo2`, `url_photo3`, `url_photo4`, `url_photo5`) VALUES
-(1, 1, 'Samsung Galaxy \n A20', 'https://catuses.com/demos/dist/img/producto1c.jpg', '350.00', 'https://m.media-amazon.com/images/I/71Ro1L149cL.jpg', 'https://http2.mlstatic.com/D_NQ_NP_918320-MLA54360160802_032023-O.webp', 'https://play-lh.googleusercontent.com/nmEep_PddRO5YYIRt2s-k9BBi9ubOkgryGWIei48MSDiagbzVOoSYmKLBv8DnlJVTro', 'https://play-lh.googleusercontent.com/xL_BPzOJ5W63XJ3jzOsFMFf2cVk9XTAjJfHzJVWSu9aagDC7sBtvh8NN2JI1mjTK5BUh'),
-(2, 1, 'Samsung Galaxy A30', 'https://catuses.com/demos/dist/img/producto2c.jpg', '452.00', '', '', '', ''),
-(3, 1, 'Samsung Galaxy \n A50', 'https://catuses.com/demos/dist/img/producto3c.jpg', '650.00', '', '', '', ''),
-(4, 1, 'Samsung Galaxy A70', 'https://www.hubside.store/media/catalog/product/s/a/samsung-galaxy-a70-128gb-4g-dual-sim-azul.jpeg?optimize=medium&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700', '470.00', '', '', '', ''),
-(5, 2, 'iPhone X', 'https://media.ldlc.com/r1600/ld/products/00/04/65/15/LD0004651580_2.jpg', '560.00', '', '', '', ''),
-(6, 2, 'iPhone 11', 'https://cdn.shopify.com/s/files/1/0485/4566/1094/products/iPhone11-1_300x.jpg?v=1605343006', '532.00', '', '', '', ''),
-(7, 2, 'iPhone 12', 'https://m.media-amazon.com/images/I/711wsjBtWeL._SX522_.jpg', '670.00', '', '', '', ''),
-(8, 3, 'Xiaomi Redmi Note 10 Pro', 'https://imei.org/storage/files/images/10309/preview/xiaomi-redmi-note-10-pro-1.png', '700.37', '', '', '', '');
+(1, 1, 'Samsung Galaxy \n A20', 'https://catuses.com/demos/dist/img/producto1c.jpg', 350.00, 'https://m.media-amazon.com/images/I/71Ro1L149cL.jpg', 'https://http2.mlstatic.com/D_NQ_NP_918320-MLA54360160802_032023-O.webp', 'https://play-lh.googleusercontent.com/nmEep_PddRO5YYIRt2s-k9BBi9ubOkgryGWIei48MSDiagbzVOoSYmKLBv8DnlJVTro', 'https://play-lh.googleusercontent.com/xL_BPzOJ5W63XJ3jzOsFMFf2cVk9XTAjJfHzJVWSu9aagDC7sBtvh8NN2JI1mjTK5BUh'),
+(2, 1, 'Samsung Galaxy A30', 'https://catuses.com/demos/dist/img/producto2c.jpg', 452.00, '', '', '', ''),
+(3, 1, 'Samsung Galaxy \n A50', 'https://catuses.com/demos/dist/img/producto3c.jpg', 650.00, '', '', '', ''),
+(4, 1, 'Samsung Galaxy A70', 'https://www.hubside.store/media/catalog/product/s/a/samsung-galaxy-a70-128gb-4g-dual-sim-azul.jpeg?optimize=medium&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700', 470.00, '', '', '', ''),
+(5, 2, 'iPhone X', 'https://media.ldlc.com/r1600/ld/products/00/04/65/15/LD0004651580_2.jpg', 560.00, '', '', '', ''),
+(6, 2, 'iPhone 11', 'https://cdn.shopify.com/s/files/1/0485/4566/1094/products/iPhone11-1_300x.jpg?v=1605343006', 532.00, '', '', '', ''),
+(7, 2, 'iPhone 12', 'https://m.media-amazon.com/images/I/711wsjBtWeL._SX522_.jpg', 670.00, '', '', '', ''),
+(8, 3, 'Xiaomi Redmi Note 10 Pro', 'https://imei.org/storage/files/images/10309/preview/xiaomi-redmi-note-10-pro-1.png', 700.37, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -127,8 +130,61 @@ INSERT INTO `modelos` (`id`, `marca_id`, `descripcion`, `url_photo`, `precio`, `
 --
 
 CREATE TABLE `ordenes` (
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `ordenes`
+--
+
+INSERT INTO `ordenes` (`id`, `user_id`, `fecha`, `status`) VALUES
+(1, 1, '2023-05-11 19:11:34', 2),
+(2, 1, '2023-05-12 05:06:48', 2),
+(3, 1, '2023-05-12 05:26:39', 2),
+(4, 1, '2023-05-12 05:27:43', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ordenes_detalles`
+--
+
+CREATE TABLE `ordenes_detalles` (
+  `id` int(11) NOT NULL,
+  `orden_id` int(11) NOT NULL,
+  `producto_id` int(11) NOT NULL,
+  `cant` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `ordenes_detalles`
+--
+
+INSERT INTO `ordenes_detalles` (`id`, `orden_id`, `producto_id`, `cant`) VALUES
+(1, 1, 3, 4),
+(2, 1, 6, 7),
+(3, 1, 6, 7),
+(4, 1, 8, 3),
+(5, 1, 8, 5),
+(6, 1, 3, 1),
+(7, 1, 3, 1),
+(8, 1, 3, 1),
+(9, 1, 3, 1),
+(10, 1, 3, 1),
+(11, 1, 3, 1),
+(12, 1, 7, 1),
+(13, 1, 4, 6),
+(14, 1, 1, 3),
+(15, 2, 4, 4),
+(16, 2, 3, 4),
+(17, 3, 4, 1),
+(18, 3, 4, 3),
+(19, 3, 6, 3),
+(20, 4, 5, 1),
+(21, 4, 4, 1);
 
 --
 -- Índices para tablas volcadas
@@ -165,6 +221,12 @@ ALTER TABLE `ordenes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `ordenes_detalles`
+--
+ALTER TABLE `ordenes_detalles`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -172,7 +234,7 @@ ALTER TABLE `ordenes`
 -- AUTO_INCREMENT de la tabla `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
@@ -196,7 +258,13 @@ ALTER TABLE `modelos`
 -- AUTO_INCREMENT de la tabla `ordenes`
 --
 ALTER TABLE `ordenes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `ordenes_detalles`
+--
+ALTER TABLE `ordenes_detalles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

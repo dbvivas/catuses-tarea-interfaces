@@ -42,7 +42,7 @@ session_start();
 
       <form action="validar_credenciales.php" method="post">
         <div class="input-group mb-3">
-          <input type="text" name="username" class="form-control" placeholder="Correo">
+          <input type="text" autofocus name="username" class="form-control" placeholder="Correo">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -50,7 +50,7 @@ session_start();
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control" placeholder="Contraseña">
+          <input type="password" name="password" class="form-control" placeholder="Contraseña" autocomplete="new-password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>

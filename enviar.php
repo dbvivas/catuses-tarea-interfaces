@@ -40,8 +40,19 @@
             <p class="lead mb-5">recuerda cumplir con las <br>
               Eespecificaciones
             </p>
+
+            <a href="#modal-edit-picture" data-toggle="modal" class="pull-right photo" data-id="<?php echo $row['empid']; ?>" onclick = "funcionP(<?php echo $row['empid']; ?>)" >
+              <div class="">
+                <img src="dist/img/default.png" style="width: 200px; height: 200px;" alt="">
+              </div>
+            </a>
+
+
           </div>
         </div>
+
+
+
         <div class="col-7">
 
           <form action="metodo_pago.php" method="get">
@@ -76,6 +87,8 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+
+<?php   include 'index_05_modal_edit_photo.php'; ?>
 
 <?php   include 'footer.php'; ?>
 

@@ -31,11 +31,7 @@ $tItemsCar = tOrdenCar($idO);
     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
       
       <div class="dropdown-divider"></div>
-      <a href="#" class="dropdown-item">
-
-
-
-
+      <a href="carrito.php" class="dropdown-item">
         <i class="fa fa-shopping-cart mr-2"></i><?php echo $tItemsCar; ?> IR AL CARRITO
         <!-- <span class="float-right text-muted text-sm">3 mins</span> -->
       </a>

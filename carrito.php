@@ -70,13 +70,13 @@
                 <td><?php echo $row['status']; ?></td>
                 <td style="text-align: center; align-items: center; vertical-align: middle;">
 
-                 <button  style=" margin-right: 15px; margin-left: 15px;" class="btn btn-warning btn-sm plus " data-id="<?php echo $row['id'];  ?>" onclick = "funcionX(<?php echo $row['id']; ?>)"><i class="fa fa-plus"></i> </button>
+                 <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-warning btn-sm plus " data-id="<?php echo $row['id'];  ?>" onclick = "funcionX(<?php echo $row['id']; ?>)"><i class="fa fa-plus"></i> </button>
 
-                 <button  style=" margin-right: 15px; margin-left: 15px;" class="btn btn-danger btn-sm minus " data-id="<?php echo $row['id'];  ?>" onclick = "funcionX(<?php echo $row['id']; ?>)"><i class="fa fa-minus"></i> </button>
+                 <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-danger btn-sm minus " data-id="<?php echo $row['id'];  ?>" onclick = "funcionX(<?php echo $row['id']; ?>)"><i class="fa fa-minus"></i> </button>
 
-                 <button  style=" margin-right: 15px; margin-left: 15px;" class="btn btn-success btn-sm detail " data-id="<?php echo $row['id'];  ?>" onclick = "funcionX(<?php echo $row['id']; ?>)"><i class="fa fa-bars"></i> </button>
+                 <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-success btn-sm detail " data-id="<?php echo $row['id'];  ?>" onclick = "funcionX(<?php echo $row['id']; ?>)"><i class="fa fa-bars"></i> </button>
 
-                 <button  style=" margin-right: 15px; margin-left: 15px;" class="btn btn-danger btn-sm delete " data-id="<?php echo $row['id'];  ?>" onclick = "funcionX(<?php echo $row['id']; ?>)"><i class="fa fa-trash"></i> </button>
+                 <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-danger btn-sm delete " data-id="<?php echo $row['id'];  ?>" onclick = "funcionX(<?php echo $row['id']; ?>)"><i class="fa fa-trash"></i> </button>
 
                </td>
              </tr> 
@@ -128,11 +128,21 @@
         </table>
       </div>
     </div>
-    <!-- /.card-body -->
+    <div class="card-footer">
+      <div class="float-right">
+        <!-- <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Reply</button> -->
+        <a href="enviar.php">
+          <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Continuar</button>
+        </a>
+      </div>
+      <!-- <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Delete</button>
+        <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button> -->
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
   </div>
-  <!-- /.card -->
-</div>
-<!-- /.col -->
+  <!-- /.col -->
 
 
 </div>

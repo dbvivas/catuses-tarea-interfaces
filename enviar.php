@@ -76,13 +76,32 @@
               <input type="text" class="form-control" placeholder="ingresa tu direccion">
             </div>
             <div class="form-group">
-              <input type="submit"  class="btn btn-primary" value="Enviar">
+              <input type="submit"  class="btn btn-primary" value="Enviar y Finalizar">
             </div>
           </form>
 
 
         </div>
       </div>
+
+
+
+
+ <div class="card-footer">
+      <div class="float-right">
+        <!-- <a href="inicio.php">
+        <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Inicio</button>
+      </a> -->
+      <!-- <a href="metodo_pago.php">
+        <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Continuar</button>
+      </a> -->
+    </div>
+    <a href="metodo_pago_select.php">
+      <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Regresar</button>
+    </a>
+    <!-- <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button> -->
+  </div>
+
     </div>
 
   </section>

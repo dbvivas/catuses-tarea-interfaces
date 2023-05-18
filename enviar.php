@@ -36,16 +36,15 @@
       <div class="card-body row">
         <div class="col-5 text-center d-flex align-items-center justify-content-center">
           <div class="">
-            <h2>Aqui su <strong> IMAGEN</strong></h2>
-            <p class="lead mb-5">recuerda cumplir con las <br>
-              Eespecificaciones
+            <h2>Estamos por terminar <strong> Enviar</strong></h2>
+            <p class="lead mb-5">ingresa los ultimos detalles para enviarte tu pedido
             </p>
 
-            <a href="#modal-edit-picture" data-toggle="modal" class="pull-right photo" data-id="<?php echo $row['empid']; ?>" onclick = "funcionP(<?php echo $row['empid']; ?>)" >
+            <!-- <a href="#modal-edit-picture" data-toggle="modal" class="pull-right photo" data-id="<?php //echo $row['empid']; ?>" onclick = "funcionP(<?php //echo $row['empid']; ?>)" >
               <div class="">
                 <img src="dist/img/default.png" style="width: 200px; height: 200px;" alt="">
               </div>
-            </a>
+            </a> -->
 
 
           </div>
@@ -55,23 +54,26 @@
 
         <div class="col-7">
 
-          <form action="metodo_pago.php" method="get">
+          <form action="enviar_finish.php" method="get">
             <div class="form-group">
-              <label for="inputName">Imagen</label>
-              <p>Subir una Imagen de referencia</p>
+              <label for="inputName">Direccion</label>
+              <p>Ingresa tu direccion</p>
+              <input type="text" class="form-control" placeholder="ingresa tu direccion">
             </div>
             <div class="form-group">
-              <label for="inputEmail">Calidad</label>
-              <p>La imagen debe ser de buena calidad</p>
+              <label for="inputName">Direccion</label>
+              <p>Ingresa tu direccion</p>
+              <input type="text" class="form-control" placeholder="ingresa tu direccion">
             </div>
             <div class="form-group">
-              <label for="inputSubject">Color Fondo</label>
-              <p> En caso de querer color de fondo especificar el color deseado y si se quiere que el
-              color de fondo cubra toda la parte trasera o solo sean brochazos como en los ejemplos  </p>
+              <label for="inputName">Direccion</label>
+              <p>Ingresa tu direccion</p>
+              <input type="text" class="form-control" placeholder="ingresa tu direccion">
             </div>
             <div class="form-group">
-              <label for="inputMessage">Message</label>
-              <textarea id="inputMessage" class="form-control" rows="4"></textarea>
+              <label for="inputName">Direccion</label>
+              <p>Ingresa tu direccion</p>
+              <input type="text" class="form-control" placeholder="ingresa tu direccion">
             </div>
             <div class="form-group">
               <input type="submit"  class="btn btn-primary" value="Enviar">

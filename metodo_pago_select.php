@@ -58,11 +58,11 @@
               <!-- /.form group -->
 
               <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">@</span>
-                  </div>
-                  <input type="text" class="form-control" placeholder="Username">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">@</span>
                 </div>
+                <input type="text" class="form-control" placeholder="Username">
+              </div>
 
               <!-- Date mm/dd/yyyy -->
               <div class="form-group">
@@ -120,22 +120,40 @@
               <!-- /.form group -->
 
             </div>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card -->
 
 
-          <!-- /.card -->
-
-        </div>
-        <!-- /.col (left) -->
-
-        <!-- /.col (right) -->
-      </div>
-
-
+            <div class="card-footer">
+              <div class="float-right">
+        <!-- <a href="inicio.php">
+        <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Inicio</button>
+      </a> -->
+      <a href="enviar.php">
+        <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Continuar</button>
+      </a>
     </div>
+    <a href="metodo_pago.php">
+      <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Regresar</button>
+    </a>
+    <!-- <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button> -->
   </div>
+
+
+  <!-- /.card-body -->
+</div>
+<!-- /.card -->
+
+
+<!-- /.card -->
+
+</div>
+<!-- /.col (left) -->
+
+<!-- /.col (right) -->
+</div>
+
+
+</div>
+</div>
 
 
 </section>
@@ -171,13 +189,13 @@
   $(function () {
 
  //Datemask dd/mm/yyyy
-  $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
     //Datemask2 mm/dd/yyyy
-  $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
     //Money Euro
-  $('[data-mask]').inputmask()
+    $('[data-mask]').inputmask()
 
-   })
+  })
 
 </script>
 

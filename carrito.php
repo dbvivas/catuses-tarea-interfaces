@@ -165,7 +165,7 @@
         <!-- <a href="inicio.php">
         <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Inicio</button>
       </a> -->
-      <a href="enviar.php">
+      <a href="metodo_pago.php">
         <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Continuar</button>
       </a>
     </div>

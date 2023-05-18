@@ -91,6 +91,21 @@
 
       
     </div>
+
+    <div class="card-footer">
+      <div class="float-right">
+        <!-- <a href="inicio.php">
+        <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Inicio</button>
+      </a> -->
+      <!-- <a href="metodo_pago.php">
+        <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Continuar</button>
+      </a> -->
+    </div>
+    <a href="carrito.php">
+      <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Regresar</button>
+    </a>
+    <!-- <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button> -->
+  </div>
     <!-- /.form-box -->
   </div><!-- /.card -->
 </div>

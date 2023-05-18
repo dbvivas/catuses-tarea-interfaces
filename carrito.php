@@ -64,6 +64,7 @@
               $sql = "SELECT * 
               FROM ordenes_detalles  
               INNER JOIN modelos ON modelos.id = ordenes_detalles.producto_id
+              INNER JOIN ordenes ON ordenes.id = ordenes_detalles.orden_id
               WHERE orden_id = ".$idO;
               $query = $conn->query($sql);
               while($row = $query->fetch_assoc()){  ?>
@@ -71,8 +72,21 @@
                 <td><?php echo $row['id']; ?></td>
                 <td><?php echo $row['cant']; ?></td>
                 <td><?php echo $row['descripcion']; ?></td>
-                <td><?php echo $row['cant']; ?></td>
-                <td><?php echo $row['cant']; ?></td>
+                <td><?php echo $row['precio']; ?></td>
+
+
+                <?php 
+
+                $fechaOrden = date('Y - m - d', strtotime($row['fecha']));
+                $subtotal = $row['cant'] * $row['precio'];
+                $subtotalG = $subtotalG + $subtotal;
+
+                ?>
+
+                <td><?php echo number_format($subtotal,2); ?></td>
+
+
+
                 <td style="text-align: center; align-items: center; vertical-align: middle;">
 
                  <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-warning btn-sm plus " data-id="<?php echo $row['id'];  ?>" onclick = "funcionX(<?php echo $row['id']; ?>)"><i class="fa fa-plus"></i> </button>
@@ -99,7 +113,7 @@
  <div class="col-md-4">
   <div class="card card-success shadow-sm">
     <div class="card-header">
-      <h3 class="card-title">Detalles Totales</h3>
+      <h3 class="card-title"><strong>Detalles Totales</strong></h3>
 
       <div class="card-tools">
         <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -110,25 +124,28 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-      <p class="lead">Amount Due 2/22/2014</p>
+      <p class="lead">Orden Realizada <?php echo $fechaOrden; ?></p>
 
       <div class="table-responsive">
         <table class="table">
           <tr>
             <th style="width:50%">Subtotal:</th>
-            <td>$250.30</td>
+            <td><?php echo '$'.number_format($subtotalG,2); ?></td>
           </tr>
           <tr>
             <th>Tax (9.3%)</th>
-            <td>$10.34</td>
+            <?php $tax = $subtotalG * 0.093; ?>
+            <td><?php echo '$'.number_format($tax,2); ?></td>
           </tr>
           <tr>
+            <?php $shipping = 5.80; ?>
             <th>Shipping:</th>
-            <td>$5.80</td>
+            <td>$<?php echo number_format($shipping,2) ?></td>
           </tr>
           <tr>
+            <?php $total = $subtotalG + $tax + $shipping; ?>
             <th>Total:</th>
-            <td>$265.24</td>
+            <td>$<?php echo number_format($total,2) ?></td>
           </tr>
         </table>
       </div>
@@ -137,21 +154,21 @@
       <div class="float-right">
         <!-- <a href="inicio.php">
         <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Inicio</button>
-        </a> -->
-        <a href="enviar.php">
-          <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Continuar</button>
-        </a>
-      </div>
-      <a href="inicio.php">
-      <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Regresar</button>
+      </a> -->
+      <a href="enviar.php">
+        <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Continuar</button>
       </a>
-        <!-- <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button> -->
-      </div>
-      <!-- /.card-body -->
     </div>
-    <!-- /.card -->
+    <a href="inicio.php">
+      <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Regresar</button>
+    </a>
+    <!-- <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button> -->
   </div>
-  <!-- /.col -->
+  <!-- /.card-body -->
+</div>
+<!-- /.card -->
+</div>
+<!-- /.col -->
 
 
 </div>

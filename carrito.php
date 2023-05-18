@@ -50,7 +50,8 @@
            <table id="example1" class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th>CAT</th>
+                <th>ID</th>
+                <th>CANT</th>
                 <th>DESCRIP</th>
                 <th>PRICE</th>
                 <th>SUBT</th>
@@ -60,14 +61,18 @@
             <tbody>
               <?php  
 
-              $sql = "SELECT * FROM ordenes  WHERE id = ".$idO;
+              $sql = "SELECT * 
+              FROM ordenes_detalles  
+              INNER JOIN modelos ON modelos.id = ordenes_detalles.producto_id
+              WHERE orden_id = ".$idO;
               $query = $conn->query($sql);
               while($row = $query->fetch_assoc()){  ?>
                <tr>
                 <td><?php echo $row['id']; ?></td>
-                <td><?php echo $row['user_id']; ?></td>
-                <td><?php echo $row['fecha']; ?></td>
-                <td><?php echo $row['status']; ?></td>
+                <td><?php echo $row['cant']; ?></td>
+                <td><?php echo $row['descripcion']; ?></td>
+                <td><?php echo $row['cant']; ?></td>
+                <td><?php echo $row['cant']; ?></td>
                 <td style="text-align: center; align-items: center; vertical-align: middle;">
 
                  <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-warning btn-sm plus " data-id="<?php echo $row['id'];  ?>" onclick = "funcionX(<?php echo $row['id']; ?>)"><i class="fa fa-plus"></i> </button>
@@ -130,13 +135,17 @@
     </div>
     <div class="card-footer">
       <div class="float-right">
-        <!-- <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Reply</button> -->
+        <!-- <a href="inicio.php">
+        <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Inicio</button>
+        </a> -->
         <a href="enviar.php">
           <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Continuar</button>
         </a>
       </div>
-      <!-- <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Delete</button>
-        <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button> -->
+      <a href="inicio.php">
+      <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Regresar</button>
+      </a>
+        <!-- <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button> -->
       </div>
       <!-- /.card-body -->
     </div>

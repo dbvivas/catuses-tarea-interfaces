@@ -62,7 +62,7 @@
               <?php  
               $subtotalG = 0;
 
-              $sql = "SELECT * 
+              $sql = "SELECT * , ordenes_detalles.id as idr
               FROM ordenes_detalles  
               INNER JOIN modelos ON modelos.id = ordenes_detalles.producto_id
               INNER JOIN ordenes ON ordenes.id = ordenes_detalles.orden_id
@@ -70,7 +70,7 @@
               $query = $conn->query($sql);
               while($row = $query->fetch_assoc()){  ?>
                <tr>
-                <td><?php echo $row['id']; ?></td>
+                <td><?php echo $row['idr']; ?></td>
                 <td><?php echo $row['cant']; ?></td>
                 <td><?php echo $row['descripcion']; ?></td>
                 <td><?php echo $row['precio']; ?></td>

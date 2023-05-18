@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 16-05-2023 a las 15:24:01
+-- Tiempo de generación: 18-05-2023 a las 05:18:21
 -- Versión del servidor: 10.3.36-MariaDB-cll-lve
 -- Versión de PHP: 8.1.16
 
@@ -156,35 +156,38 @@ CREATE TABLE `ordenes_detalles` (
   `id` int(11) NOT NULL,
   `orden_id` int(11) NOT NULL,
   `producto_id` int(11) NOT NULL,
-  `cant` int(11) NOT NULL
+  `cant` int(11) NOT NULL,
+  `img_user_upload` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `observacion` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `ordenes_detalles`
 --
 
-INSERT INTO `ordenes_detalles` (`id`, `orden_id`, `producto_id`, `cant`) VALUES
-(1, 1, 3, 4),
-(2, 1, 6, 7),
-(3, 1, 6, 7),
-(4, 1, 8, 3),
-(5, 1, 8, 5),
-(6, 1, 3, 1),
-(7, 1, 3, 1),
-(8, 1, 3, 1),
-(9, 1, 3, 1),
-(10, 1, 3, 1),
-(11, 1, 3, 1),
-(12, 1, 7, 1),
-(13, 1, 4, 6),
-(14, 1, 1, 3),
-(15, 2, 4, 4),
-(16, 2, 3, 4),
-(17, 3, 4, 1),
-(18, 3, 4, 3),
-(19, 3, 6, 3),
-(20, 4, 5, 1),
-(21, 4, 4, 1);
+INSERT INTO `ordenes_detalles` (`id`, `orden_id`, `producto_id`, `cant`, `img_user_upload`, `observacion`) VALUES
+(1, 1, 3, 4, '', ''),
+(2, 1, 6, 7, '', ''),
+(3, 1, 6, 7, '', ''),
+(4, 1, 8, 3, '', ''),
+(5, 1, 8, 5, '', ''),
+(6, 1, 3, 1, '', ''),
+(7, 1, 3, 1, '', ''),
+(8, 1, 3, 1, '', ''),
+(9, 1, 3, 1, '', ''),
+(10, 1, 3, 1, '', ''),
+(11, 1, 3, 1, '', ''),
+(12, 1, 7, 1, '', ''),
+(13, 1, 4, 6, '', ''),
+(14, 1, 1, 3, '', ''),
+(15, 2, 4, 4, '', ''),
+(16, 2, 3, 4, '', ''),
+(17, 3, 4, 1, '', ''),
+(18, 3, 4, 3, '', ''),
+(19, 3, 6, 3, '', ''),
+(20, 4, 5, 1, 'dist/img/172.png', 'No se le da muy bien el almacenamiento de electricidad. A la mínima, descarga energía sin darse cuenta.'),
+(21, 4, 4, 2, 'dist/img/010.png', 'Para protegerse, despide un hedor horrible por las antenas con el que repele a sus enemigos.\r\n\r\n'),
+(22, 4, 1, 4, 'dist/img/009.png', 'Para acabar con su enemigo, lo aplasta con el peso de su cuerpo. En momentos de apuro, se esconde en el caparazón.\r\n\r\n');
 
 --
 -- Índices para tablas volcadas
@@ -264,7 +267,7 @@ ALTER TABLE `ordenes`
 -- AUTO_INCREMENT de la tabla `ordenes_detalles`
 --
 ALTER TABLE `ordenes_detalles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

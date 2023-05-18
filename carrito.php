@@ -60,6 +60,7 @@
             </thead>
             <tbody>
               <?php  
+              $subtotalG = 0;
 
               $sql = "SELECT * 
               FROM ordenes_detalles  
@@ -77,6 +78,7 @@
 
                 <?php 
 
+                
                 $fechaOrden = date('Y - m - d', strtotime($row['fecha']));
                 $subtotal = $row['cant'] * $row['precio'];
                 $subtotalG = $subtotalG + $subtotal;

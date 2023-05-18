@@ -50,7 +50,7 @@
            <table id="example1" class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th>ID</th>
+                <!-- <th>ID</th> -->
                 <th>CANT</th>
                 <th>DESCRIP</th>
                 <th>PRICE</th>
@@ -70,9 +70,9 @@
               $query = $conn->query($sql);
               while($row = $query->fetch_assoc()){  ?>
                <tr>
-                <td><?php echo $row['idr']; ?></td>
+                <!-- <td><?php //echo $row['idr']; ?></td> -->
                 <td><?php echo $row['cant']; ?></td>
-                <td><?php echo $row['descripcion']; ?></td>
+                <td> <img src="<?php echo (!empty($row['url_photo'])) ? $row['url_photo'] : 'dist/img/dispositivo1.jpg'; ?>" alt="Product Image" style="width: 75px; height: 75px;" > <?php echo $row['descripcion']; ?></td>
                 <td><?php echo $row['precio']; ?></td>
 
 
@@ -91,13 +91,21 @@
 
                 <td style="text-align: center; align-items: center; vertical-align: middle;">
 
-                 <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-warning btn-sm plus " data-id="<?php echo $row['id'];  ?>" onclick = "funcionX(<?php echo $row['id']; ?>)"><i class="fa fa-plus"></i> </button>
+                  <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-warning btn-sm plus " data-id="<?php echo $row['id'];  ?>" onclick = "funcionPlus(<?php echo $row['id']; ?>)"><i class="fa fa-plus"></i> </button>
 
-                 <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-danger btn-sm minus " data-id="<?php echo $row['id'];  ?>" onclick = "funcionX(<?php echo $row['id']; ?>)"><i class="fa fa-minus"></i> </button>
+                  <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-danger btn-sm minus " data-id="<?php echo $row['id'];  ?>" onclick = "funcionMinus(<?php echo $row['id']; ?>)"><i class="fa fa-minus"></i> </button>
 
-                 <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-success btn-sm detail " data-id="<?php echo $row['id'];  ?>" onclick = "funcionX(<?php echo $row['id']; ?>)"><i class="fa fa-bars"></i> </button>
 
-                 <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-danger btn-sm delete " data-id="<?php echo $row['id'];  ?>" onclick = "funcionX(<?php echo $row['id']; ?>)"><i class="fa fa-trash"></i> </button>
+
+                  <a href="#modal-edit-detalles" data-toggle="modal" class="photo" data-id="<?php echo $row['idr']; ?>" onclick = "funcionP(<?php echo $row['idr']; ?>)" >
+                   <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-success btn-sm " ><i class="fa fa-bars"></i> 
+                   </button>
+                 </a>
+
+
+
+
+                 <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-danger btn-sm delete " data-id="<?php echo $row['id'];  ?>" onclick = "funcionY(<?php echo $row['id']; ?>)"><i class="fa fa-trash"></i> </button>
 
                </td>
              </tr> 
@@ -181,7 +189,7 @@
 </div>
 <!-- /.content-wrapper -->
 
-<?php   include 'index_05_modal_edit_photo.php'; ?>
+<?php   include 'index_05_modal_edit_detalles.php'; ?>
 
 <?php   include 'footer.php'; ?>
 
@@ -227,7 +235,101 @@
      /* "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]*/
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
+
+
   });
+
+
+  // EDITAR-PHOTO
+  function funcionP(valor){
+    //alert(valor);
+    $('#modal-edit-picture').modal('show');    
+    var id = valor;    
+    getRow(id);
+  }
+
+
+  // ELIMINAR
+  function funcionY(valor){
+    //alert(valor);
+    $('#modal-delete').modal('show');
+    var id = valor;
+    getRow(id);
+
+  }
+
+  
+  $(function(){
+
+   $('.edit').click(function(e){
+    e.preventDefault();
+    $('#modal-edit').modal('show');
+    var id = $(this).data('id');
+
+    // alert(id);
+    
+    getRow(id);
+  });
+
+   $('.delete').click(function(e){
+    e.preventDefault();
+    $('#modal-delete').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
+  });
+
+   $('.photo').click(function(e){
+    e.preventDefault();
+    var id = $(this).data('id');
+    //alert(id);
+    getRow(id);
+  });
+
+ });
+
+
+
+  function getRow(id){
+
+    var tabla = 'ordenes_detalles';    
+
+    $.ajax({
+      type: 'POST',
+      url: 'index_02_data_row.php',
+      data: {id:id,tabla:tabla},
+      dataType: 'json',
+      success: function(response){
+
+        //alert(id);
+        console.log(response);
+
+        $('.empid').val(response.empid);
+        $('.empid1').val(response.empid);
+
+        $('.employee_id').html(response.nombreempleado);
+        
+        $('.del_employee_name').html(response.nombre);
+
+        //$('#output').val(response.img_user_uload);
+        $('#edit_observaciones').val(response.observacion);
+
+
+        if(response.img_user_upload == ""){
+          $("#output").attr("src","dist/img/default.png");
+        }else{
+          $("#output").attr("src",response.img_user_upload);
+        }
+
+
+
+
+      }
+    });
+  }
+
+
+
+
 </script>
 
 </body>

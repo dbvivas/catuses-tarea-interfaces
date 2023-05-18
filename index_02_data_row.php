@@ -1,5 +1,5 @@
 <?php 
-  include '../00_includes/00_session.php'; 
+  include '00_includes/session.php'; 
 
   if(isset($_POST['id']) && isset($_POST['tabla'])){
     

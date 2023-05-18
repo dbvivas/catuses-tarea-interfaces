@@ -4,7 +4,7 @@ $modo = true;
 
 $servername = "localhost";	
 
-if (modo) {
+if ($modo) {
 	$username = "catuses_demo";
 	$password = "5BTba(fj5Snn";	
 }else{	

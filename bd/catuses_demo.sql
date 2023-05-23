@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 18-05-2023 a las 05:18:21
+-- Tiempo de generación: 23-05-2023 a las 14:57:14
 -- Versión del servidor: 10.3.36-MariaDB-cll-lve
 -- Versión de PHP: 8.1.16
 
@@ -133,18 +133,28 @@ CREATE TABLE `ordenes` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
-  `status` int(1) NOT NULL DEFAULT 1
+  `status` int(1) NOT NULL DEFAULT 1,
+  `nombreUsuario` varchar(100) DEFAULT NULL,
+  `numeroTarjeta` varchar(50) DEFAULT NULL,
+  `vence` varchar(10) DEFAULT NULL,
+  `cvv` varchar(10) DEFAULT NULL,
+  `colonia` varchar(255) DEFAULT NULL,
+  `codigoPostal` varchar(255) DEFAULT NULL,
+  `municipio` varchar(255) DEFAULT NULL,
+  `telefono` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `ordenes`
 --
 
-INSERT INTO `ordenes` (`id`, `user_id`, `fecha`, `status`) VALUES
-(1, 1, '2023-05-11 19:11:34', 2),
-(2, 1, '2023-05-12 05:06:48', 2),
-(3, 1, '2023-05-12 05:26:39', 2),
-(4, 1, '2023-05-12 05:27:43', 1);
+INSERT INTO `ordenes` (`id`, `user_id`, `fecha`, `status`, `nombreUsuario`, `numeroTarjeta`, `vence`, `cvv`, `colonia`, `codigoPostal`, `municipio`, `telefono`, `email`, `address`) VALUES
+(1, 1, '2023-05-11 19:11:34', 2, NULL, NULL, NULL, NULL, '', '', '', '', '', ''),
+(2, 1, '2023-05-12 05:06:48', 2, NULL, NULL, NULL, NULL, '', '', '', '', '', ''),
+(3, 1, '2023-05-12 05:26:39', 2, NULL, NULL, NULL, NULL, '', '', '', '', '', ''),
+(4, 1, '2023-05-12 05:27:43', 2, 'danilo', '1111-1111-1111-1111', '03/03', '333', 'maximo jerez', '14018', 'managua', '89065522', 'danilo.berroteran@tecnacional.edu.ni', '22 Calle Sureste, Managua');
 
 -- --------------------------------------------------------
 
@@ -185,7 +195,7 @@ INSERT INTO `ordenes_detalles` (`id`, `orden_id`, `producto_id`, `cant`, `img_us
 (17, 3, 4, 1, '', ''),
 (18, 3, 4, 3, '', ''),
 (19, 3, 6, 3, '', ''),
-(20, 4, 5, 1, 'dist/img/172.png', 'No se le da muy bien el almacenamiento de electricidad. A la mínima, descarga energía sin darse cuenta.'),
+(20, 4, 5, 1, 'dist/img/2023-05-17-171844.jpg', 'No se le da muy bien el almacenamiento de electricidad. A la mínima, descarga energía sin darse cuenta.'),
 (21, 4, 4, 2, 'dist/img/010.png', 'Para protegerse, despide un hedor horrible por las antenas con el que repele a sus enemigos.\r\n\r\n'),
 (22, 4, 1, 4, 'dist/img/009.png', 'Para acabar con su enemigo, lo aplasta con el peso de su cuerpo. En momentos de apuro, se esconde en el caparazón.\r\n\r\n');
 
@@ -267,7 +277,7 @@ ALTER TABLE `ordenes`
 -- AUTO_INCREMENT de la tabla `ordenes_detalles`
 --
 ALTER TABLE `ordenes_detalles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

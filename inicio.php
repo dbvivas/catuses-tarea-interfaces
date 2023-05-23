@@ -16,6 +16,9 @@
 
       <!-- Main content -->
       <section class="content">
+
+<?php include '00_includes/alertas.php'; ?>
+        
         <div class="container-fluid">
           <div class="row">
             <div class="col-12">

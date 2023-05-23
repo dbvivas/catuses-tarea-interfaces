@@ -37,9 +37,9 @@
     <!-- Default box -->
     <div class="card">
       <div class="card-body row">
-        <div class="col-5 text-center d-flex align-items-center justify-content-center">
+        <div class="col-12 text-center d-flex align-items-center justify-content-center">
           <div class="">
-            <h2>Estamos por terminar <strong> Enviar</strong></h2>
+            <h2>Hemos <strong> Terminado </strong></h2>
             <p class="lead mb-5">ingresa los ultimos detalles para enviarte tu pedido
             </p>
 
@@ -55,50 +55,7 @@
 
 
 
-        <div class="col-7">
 
-          <form action="updateEnvioInfo.php" method="POST" enctype="multipart/form-data">
-
-            <input type="hidden" name="id" value="<?php   echo $idO; ?>">
-
-            <div class="form-group">
-              <label for="inputName">Direccion</label>              
-              <input type="text" name="address" class="form-control" placeholder="ingresa tu direccion">
-            </div>
-            <div class="form-group">
-              <label for="inputName">Municipio</label>              
-              <input type="text" name="municipio" class="form-control" placeholder="ingresa tu municipio">
-            </div>
-
-            <div class="form-group">
-              <label for="inputName">Colonia</label>              
-              <input type="text" name="colonia" class="form-control" placeholder="ingresa tu colonia">
-            </div>
-
-
-            <div class="form-group">
-              <label for="inputName">Codigo Postal</label>              
-              <input type="text" name="codigoPostal" class="form-control" placeholder="ingresa tu codigo postal">
-            </div>
-            <div class="form-group">
-              <label for="inputName">Telefono</label>              
-              <input type="text" name="telefono" class="form-control" placeholder="ingresa tu telefono">
-            </div>
-
-            <div class="form-group">
-              <label for="inputName">Email</label>              
-              <input type="email" name="email" class="form-control" placeholder="ingresa tu email">
-            </div>
-
-
-
-            <div class="form-group">
-              <input type="submit" name="envioInfo"  class="btn btn-primary" value="Enviar y Finalizar">
-            </div>
-          </form>
-
-
-        </div>
       </div>
 
 
@@ -109,12 +66,13 @@
         <!-- <a href="inicio.php">
         <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Inicio</button>
       </a> -->
-      <!-- <a href="metodo_pago.php">
-        <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Continuar</button>
-      </a> -->
+
+      <a href="index.php">
+        <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Ir al Inicio</button>
+      </a> 
     </div>
-    <a href="metodo_pago_select.php">
-      <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Regresar</button>
+    <a href="index.php">
+      <button type="button" class="btn btn-default"><i class="fas fa-plus"></i> Iniciar Nueva Compra</button>
     </a>
     <!-- <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button> -->
   </div>

@@ -34,12 +34,12 @@
 
           <div class="form-group">
 
-            <div class="custom-control custom-radio">
+            <!-- <div class="custom-control custom-radio">
               <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
               <label for="customRadio1" class="custom-control-label">CREDITO..............</label>
               <img src="dist/img/credit/visa.png" alt="Visa">
             </div>
-            <br>  
+            <br>  --> 
           
             <div class="custom-control custom-radio">
               <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio" checked>
@@ -48,7 +48,7 @@
             </div>
             <br>  
            
-            <div class="custom-control custom-radio">
+       <!--      <div class="custom-control custom-radio">
               <input class="custom-control-input" type="radio" id="customRadio3" name="customRadio" checked>
               <label for="customRadio3" class="custom-control-label">OXXO...................</label>
               <img src="dist/img/credit/american-express.png" alt="American Express">
@@ -60,7 +60,7 @@
               <label for="customRadio4" class="custom-control-label">PAYPAL................</label>
               <img src="dist/img/credit/paypal2.png" alt="Paypal">
             </div>
-
+ -->
 
 
 
@@ -79,7 +79,7 @@
 
            <!-- /.col -->
            <div class="col-12">
-            <button type="submit" name="add" class="btn btn-primary btn-block">SELECCIONAR</button>
+            <button type="submit" name="add" class="btn btn-primary btn-block">CONTINUAR <i class="fas fa-share"></i> </button>
           </div>
           <!-- /.col -->
         </div>

@@ -32,6 +32,8 @@
   <!-- Main content -->
   <section class="content">
 
+    <?php include '00_includes/alertas.php'; ?>
+
     <div class="row">
       <div class="col-md-8">
         <div class="card card-primary shadow-none">
@@ -53,6 +55,7 @@
                 <!-- <th>ID</th> -->
                 <th>CANT</th>
                 <th>DESCRIP</th>
+                <th>IMG CUSTOM</th>
                 <th>PRICE</th>
                 <th>SUBT</th>
                 <th>OPC</th>
@@ -71,8 +74,24 @@
               while($row = $query->fetch_assoc()){  ?>
                <tr>
                 <!-- <td><?php //echo $row['idr']; ?></td> -->
+                
                 <td><?php echo $row['cant']; ?></td>
-                <td> <img src="<?php echo (!empty($row['url_photo'])) ? $row['url_photo'] : 'dist/img/dispositivo1.jpg'; ?>" alt="Product Image" style="width: 75px; height: 75px;" > <?php echo $row['descripcion']; ?></td>
+
+                <td> 
+                  <img src="<?php echo (!empty($row['url_photo'])) ? $row['url_photo'] : 'dist/img/dispositivo1.jpg'; ?>" alt="Product Image" style="width: 75px; height: 75px;" > <?php echo $row['descripcion']; ?>
+                </td>
+
+
+                <td> 
+                  <img src="<?php echo (!empty($row['img_user_upload'])) ? $row['img_user_upload'] : 'dist/img/dispositivo1.jpg'; ?>" alt="Product Image" style="width: 75px; height: 75px;" > 
+
+                   <a href="#modal-edit-detalles" data-toggle="modal" class="photo" data-id="<?php echo $row['idr']; ?>" onclick = "funcionP(<?php echo $row['idr']; ?>)" >
+                   <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-success btn-sm " ><i class="fa fa-camera"></i> 
+                   </button>
+                 </a>
+
+                </td>
+
                 <td><?php echo $row['precio']; ?></td>
 
 
@@ -91,21 +110,17 @@
 
                 <td style="text-align: center; align-items: center; vertical-align: middle;">
 
-                  <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-warning btn-sm plus " data-id="<?php echo $row['id'];  ?>" onclick = "funcionPlus(<?php echo $row['id']; ?>)"><i class="fa fa-plus"></i> </button>
+                  <!-- <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-warning btn-sm plus " data-id="<?php //echo $row['idr'];  ?>" onclick = "funcionPlus(<?php //echo $row['idr']; ?>)"><i class="fa fa-plus"></i> 
+                  </button>
 
-                  <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-danger btn-sm minus " data-id="<?php echo $row['id'];  ?>" onclick = "funcionMinus(<?php echo $row['id']; ?>)"><i class="fa fa-minus"></i> </button>
+                  <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-danger btn-sm minus " data-id="<?php //echo $row['idr'];  ?>" onclick = "funcionMinus(<?php //echo $row['idr']; ?>)"><i class="fa fa-minus"></i> 
+                  </button> -->
 
+                 
 
+                 <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-danger btn-sm delete " data-id="<?php echo $row['idr'];  ?>" onclick = "funcionY(<?php echo $row['idr']; ?>)"><i class="fa fa-trash"></i> 
+                 </button>
 
-                  <a href="#modal-edit-detalles" data-toggle="modal" class="photo" data-id="<?php echo $row['idr']; ?>" onclick = "funcionP(<?php echo $row['idr']; ?>)" >
-                   <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-success btn-sm " ><i class="fa fa-bars"></i> 
-                   </button>
-                 </a>
-
-
-
-
-                 <button  style=" margin-right: 2px; margin-left: 2px;" class="btn btn-danger btn-sm delete " data-id="<?php echo $row['id'];  ?>" onclick = "funcionY(<?php echo $row['id']; ?>)"><i class="fa fa-trash"></i> </button>
 
                </td>
              </tr> 
@@ -190,6 +205,7 @@
 <!-- /.content-wrapper -->
 
 <?php   include 'index_05_modal_edit_detalles.php'; ?>
+<?php   include 'index_06_modal_delete.php'; ?>
 
 <?php   include 'footer.php'; ?>
 
@@ -223,6 +239,13 @@
 
 <script>
   $(function () {
+
+   window.setTimeout(function() {
+        $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+          $(this).remove();
+        });
+      }, 3000);
+    
     $("#example1").DataTable({
       "paging": false,
       "lengthChange": false,
